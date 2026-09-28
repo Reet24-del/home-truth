@@ -1,0 +1,52 @@
+{
+  "project": {
+    "slug": "nimbus-greens",
+    "name": "Nimbus Greens (Phase 1)",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "registrationNumber": "DEMO-RERA-0001",
+    "promoter": "Kestrel Habitat Pvt. Ltd.",
+    "isDemo": true,
+    "summary": "A fictional project built to show every common trick: floors and a tower that aren't registered, an optimistic possession date, super built-up areas, unregistered amenities, hidden charges and illegal clauses."
+  },
+  "sources": [
+    {
+      "key": "brochure",
+      "file": "brochure.md",
+      "title": "Nimbus Greens marketing brochure (August 2026)",
+      "shortName": "Brochure",
+      "kind": "marketing",
+      "publisher": "Kestrel Habitat Pvt. Ltd.",
+      "publishedAt": "2026-08-01"
+    },
+    {
+      "key": "registration",
+      "file": "rera-registration.md",
+      "title": "RERA registration details: Nimbus Greens Phase 1",
+      "shortName": "RERA registration",
+      "kind": "registration",
+      "publisher": "State Real Estate Regulatory Authority (as filed by the promoter)",
+      "publishedAt": "2026-06-14"
+    },
+    {
+      "key": "agreement",
+      "file": "agreement-for-sale.md",
+      "title": "Draft agreement for sale: Apartment A-704",
+      "shortName": "Draft agreement",
+      "kind": "agreement",
+      "publisher": "Kestrel Habitat Pvt. Ltd.",
+      "publishedAt": "2026-09-02"
+    }
+  ],
+  "lawSources": [
+    {
+      "key": "rera-act-2016",
+      "title": "The Real Estate (Regulation and Development) Act, 2016",
+      "shortName": "RERA Act 2016",
+      "kind": "law",
+      "publisher": "Government of India",
+      "publishedAt": "2016-03-25",
+      "url": "https://rera.mohua.gov.in/real-estate-regulation-and-development-act-2016.html"
+    }
+  ]
+}

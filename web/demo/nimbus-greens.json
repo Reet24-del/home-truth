@@ -1,0 +1,739 @@
+{
+  "_id": "project-nimbus-greens",
+  "name": "Nimbus Greens (Phase 1)",
+  "slug": "nimbus-greens",
+  "city": "Pune",
+  "state": "Maharashtra",
+  "registrationNumber": "DEMO-RERA-0001",
+  "promoter": "Kestrel Habitat Pvt. Ltd.",
+  "isDemo": true,
+  "summary": "A fictional project built to show every common trick: floors and a tower that aren't registered, an optimistic possession date, super built-up areas, unregistered amenities, hidden charges and illegal clauses.",
+  "sources": [
+    {
+      "_id": "source-nimbus-greens-brochure",
+      "title": "Nimbus Greens marketing brochure (August 2026)",
+      "shortName": "Brochure",
+      "kind": "marketing",
+      "publisher": "Kestrel Habitat Pvt. Ltd.",
+      "publishedAt": "2026-08-01",
+      "url": null,
+      "body": "# Nimbus Greens: Live Above the Clouds\n\n*Marketing brochure · Kestrel Habitat Pvt. Ltd. · Edition: August 2026*\n\n> FICTIONAL SAMPLE DOCUMENT created for the Home Truth demo. Nimbus Greens and\n> Kestrel Habitat Pvt. Ltd. do not exist. Any resemblance to a real project or\n> company is coincidental.\n\n## Welcome home\n\nNimbus Greens is a landmark address of 4 iconic towers rising G+18 storeys,\nset on 2.1 acres of green in Hinjewadi Phase 2, Pune. Wake up to skyline views,\nwalk to the IT park, and come home to a resort you never have to leave.\n\n## Possession\n\nPossession from March 2027. Book now and move in within months!\n\n## Homes\n\n| Configuration | Area         | Starting price           |\n| ------------- | ------------ | ------------------------ |\n| 2 BHK         | 1,050 sq ft  | ₹72 lakh all-inclusive   |\n| 3 BHK         | 1,450 sq ft  | ₹98 lakh all-inclusive   |\n\nEvery home comes with vitrified flooring, a modular kitchen platform and\npremium sanitaryware.\n\n## Lifestyle amenities\n\n- Grand clubhouse with gymnasium\n- Rooftop infinity pool\n- 1 km jogging track\n- Children's play area\n- Open-air amphitheatre\n- EV charging point at every parking space\n\n## Parking\n\nFree covered parking for every home.\n\n## Approvals\n\nAll approvals in place. RERA registered: DEMO-RERA-0001.\n\n## Easy payment plan\n\nPay just 20% on booking to lock today's price. The balance is linked to\nconstruction milestones.\n\n| Milestone              | Payment |\n| ---------------------- | ------- |\n| On booking             | 20%     |\n| On plinth              | 15%     |\n| On each 3rd slab       | 10%     |\n| On possession          | 15%     |\n\n## Why Kestrel Habitat\n\nKestrel Habitat Pvt. Ltd. has delivered homes that families love. Our promise\nis simple: what you see is what you get.\n\n---\n\n*Disclaimer: Images are artist's impressions. Specifications, amenities and\nareas are indicative and subject to change at the sole discretion of the\ndeveloper. This brochure does not constitute an offer or contract.*\n"
+    },
+    {
+      "_id": "source-nimbus-greens-registration",
+      "title": "RERA registration details: Nimbus Greens Phase 1",
+      "shortName": "RERA registration",
+      "kind": "registration",
+      "publisher": "State Real Estate Regulatory Authority (as filed by the promoter)",
+      "publishedAt": "2026-06-14",
+      "url": null,
+      "body": "# Project registration details: Nimbus Greens (Phase 1)\n\n*As filed with the State Real Estate Regulatory Authority*\n\n> FICTIONAL SAMPLE DOCUMENT created for the Home Truth demo. The registration\n> number, promoter and project below do not exist. Real registrations are\n> published on each state's RERA portal.\n\n## Registration\n\n- Registration number: DEMO-RERA-0001\n- Registered on: 14 June 2026\n- Promoter: Kestrel Habitat Pvt. Ltd.\n- Project type: Residential\n- Location: Hinjewadi Phase 2, Pune, Maharashtra\n- Land area of project: 8,498 sq m (2.10 acres)\n- Proposed date of completion: 31 December 2028\n- Revised date of completion: not applicable\n\n## Buildings in this registration\n\n| Building | Sanctioned floors | Apartments |\n| -------- | ----------------- | ---------- |\n| A        | Ground + 12       | 96         |\n| B        | Ground + 12       | 96         |\n| C        | Ground + 12       | 96         |\n\nNote: The promoter has disclosed a proposal for additional floors (up to\nGround + 18) and a fourth building (D). These are not part of this\nregistration and have no sanctioned plan at the time of registration.\n\n## Apartment types\n\nCarpet area as defined in Section 2(k) of the Real Estate (Regulation and\nDevelopment) Act, 2016.\n\n| Type  | Carpet area               |\n| ----- | ------------------------- |\n| 2 BHK | 64.10 sq m (690 sq ft)    |\n| 3 BHK | 88.72 sq m (955 sq ft)    |\n\n## Common areas and facilities\n\n- Clubhouse with gymnasium\n- Jogging track (600 m)\n- Children's play area\n- Landscaped garden\n\nParking: 288 covered (stilt) parking spaces and 40 open visitor parking spaces.\n\n## Approvals and clearances\n\n| Approval                                              | Status           | Date                  |\n| ----------------------------------------------------- | ---------------- | --------------------- |\n| Building plan sanction (Buildings A to C, Ground + 12) | Granted          | 15 January 2026       |\n| Commencement certificate (Buildings A to C)            | Granted          | 2 March 2026          |\n| Fire NOC (provisional)                                 | Granted          | 20 February 2026      |\n| Environmental clearance                                | Applied, awaited | Applied 12 May 2026   |\n\n## Designated bank account\n\n70% of amounts received from allottees are deposited in a separate account:\nDemo Bank, account ending 0001, \"Nimbus Greens Phase 1 RERA Designated Account\".\n\n## Litigation\n\nNone disclosed.\n"
+    },
+    {
+      "_id": "source-nimbus-greens-agreement",
+      "title": "Draft agreement for sale: Apartment A-704",
+      "shortName": "Draft agreement",
+      "kind": "agreement",
+      "publisher": "Kestrel Habitat Pvt. Ltd.",
+      "publishedAt": "2026-09-02",
+      "url": null,
+      "body": "# Agreement for Sale (draft): Apartment A-704, Nimbus Greens Phase 1\n\n*Draft issued by Kestrel Habitat Pvt. Ltd. on 2 September 2026, for review by the allottee*\n\n> FICTIONAL SAMPLE DOCUMENT created for the Home Truth demo. It is not a real\n> agreement and is not a template to use.\n\nThis Agreement for Sale is made between Kestrel Habitat Pvt. Ltd. (the\n\"Promoter\") and the person named in Schedule 1 (the \"Allottee\").\n\n## 1. The apartment\n\nThe Promoter agrees to sell, and the Allottee agrees to buy, Apartment A-704 on\nthe 7th floor of Building A in Nimbus Greens Phase 1 (registration number\nDEMO-RERA-0001), having a carpet area of 64.10 sq m (690 sq ft).\n\n## 2. Consideration\n\n| Item                                        | Amount       |\n| ------------------------------------------- | ------------ |\n| Price of the apartment                      | ₹72,00,000   |\n| Covered car parking space (1 no.)           | ₹4,50,000    |\n| GST at 5% on the price of the apartment     | ₹3,60,000    |\n| Maintenance deposit (24 months)             | ₹1,20,000    |\n| Legal and documentation charges             | ₹25,000      |\n| **Total payable**                           | **₹81,55,000** |\n\nTotal payable: ₹81,55,000, exclusive of stamp duty and registration charges,\nwhich shall be borne by the Allottee.\n\n## 3. Possession\n\nThe Promoter shall hand over possession of the apartment on or before\n31 December 2028, subject to clause 5.\n\n## 4. Delay in possession\n\nIf the Promoter fails to hand over possession by the date in clause 3, the\nPromoter shall pay the Allottee compensation at ₹5 per sq ft of carpet area for\nevery month of delay, and this shall be the Allottee's sole remedy.\n\n## 5. Force majeure\n\nThe Promoter shall not be liable for delay caused by force majeure, which\nincludes war, flood, fire, earthquake or other natural calamity, and also\nincludes delay in obtaining any approval from any government authority, and\nshortage of labour or construction material.\n\n## 6. Payments\n\nAll payments shall be made by cheque or bank transfer to the Nimbus Greens\nPhase 1 RERA Designated Account.\n\n## 7. Common areas and facilities\n\nThe Allottee shall have the right to use the common areas and facilities listed\nin Annexure B: clubhouse with gymnasium, jogging track, children's play area and\nlandscaped garden.\n\n## 8. Defect liability\n\nIf any structural defect or defect in workmanship is brought to the notice of\nthe Promoter within a period of one year from the date of handing over\npossession, the Promoter shall rectify it without further charge.\n\n## 9. Cancellation by the Allottee\n\nIf the Allottee cancels this agreement, the Promoter may forfeit 20% of the\nprice of the apartment and refund the balance without interest within twelve\nmonths.\n"
+    },
+    {
+      "_id": "source-law-rera-act-2016",
+      "title": "The Real Estate (Regulation and Development) Act, 2016",
+      "shortName": "RERA Act 2016",
+      "kind": "law",
+      "publisher": "Government of India",
+      "publishedAt": "2016-03-25",
+      "url": "https://rera.mohua.gov.in/real-estate-regulation-and-development-act-2016.html",
+      "body": null
+    }
+  ],
+  "findings": [
+    {
+      "_id": "finding-nimbus-greens-promoter-name",
+      "status": "match",
+      "severity": "critical",
+      "summary": "All 3 sources agree: Kestrel Habitat Pvt. Ltd.",
+      "attribute": {
+        "key": "promoter_name",
+        "label": "Builder (promoter) name",
+        "description": "Legal name of the company developing and selling the project.",
+        "buyerImpact": "The company you sign with and pay must be the registered promoter.",
+        "askFor": "the promoter's name and company number on the registration certificate, and the same name on the agreement and every receipt"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "Kestrel Habitat Pvt. Ltd.",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-promoter-name",
+            "quote": "Promoter: Kestrel Habitat Pvt. Ltd.",
+            "location": "Registration",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "agrees",
+          "display": "Kestrel Habitat Pvt. Ltd.",
+          "claim": {
+            "_id": "claim-nimbus-greens-agreement-promoter-name",
+            "quote": "made between Kestrel Habitat Pvt. Ltd. (the \"Promoter\")",
+            "location": "Preamble",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "Draft agreement",
+              "kind": "agreement",
+              "title": "Draft agreement for sale: Apartment A-704",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "agrees",
+          "display": "Kestrel Habitat Pvt. Ltd.",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-promoter-name",
+            "quote": "Kestrel Habitat Pvt. Ltd. has delivered homes that families love.",
+            "location": "Why Kestrel Habitat",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-tower-count",
+      "status": "mismatch",
+      "severity": "major",
+      "summary": "The Brochure says 4 buildings; the RERA registration says 3 buildings.",
+      "attribute": {
+        "key": "tower_count",
+        "label": "Buildings in this phase",
+        "description": "Number of buildings (towers) covered by the project registration or advertised for the project.",
+        "buyerImpact": "A building that isn't in the registration has no registered completion date or sanctioned plan yet.",
+        "askFor": "the registration certificate for every building in the project, including any tower sold as a later phase"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "3 buildings",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-tower-count",
+            "quote": "a fourth building (D). These are not part of this registration",
+            "location": "Buildings in this registration (A, B and C)",
+            "note": null,
+            "verified": true,
+            "numberValue": 3,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "4 buildings",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-tower-count",
+            "quote": "a landmark address of 4 iconic towers",
+            "location": "Welcome home",
+            "note": null,
+            "verified": true,
+            "numberValue": 4,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-floors-per-tower",
+      "status": "mismatch",
+      "severity": "critical",
+      "summary": "The Brochure says 18 floors above ground; the RERA registration says 12 floors above ground.",
+      "attribute": {
+        "key": "floors_per_tower",
+        "label": "Floors per building",
+        "description": "Floors above ground in each building (G+12 means 12).",
+        "buyerImpact": "Flats above the sanctioned floor have no approved plan. Don't book them until an amended sanction is registered.",
+        "askFor": "the sanctioned building plan showing the floor you are being sold, and the amended sanction if the builder claims more floors"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "12 floors above ground",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-floors-per-tower",
+            "quote": "Building plan sanction (Buildings A to C, Ground + 12)",
+            "location": "Approvals and clearances",
+            "note": null,
+            "verified": true,
+            "numberValue": 12,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "18 floors above ground",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-floors-per-tower",
+            "quote": "4 iconic towers rising G+18 storeys",
+            "location": "Welcome home",
+            "note": null,
+            "verified": true,
+            "numberValue": 18,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-completion-date",
+      "status": "mismatch",
+      "severity": "critical",
+      "summary": "The Brochure says March 2027; the RERA registration says 31 December 2028, 21 months later.",
+      "attribute": {
+        "key": "completion_date",
+        "label": "Possession / completion date",
+        "description": "When the project will be completed and possession handed over.",
+        "buyerImpact": "The registered date is the one the builder is legally held to. Plan rent, loan EMIs and your move around it.",
+        "askFor": "the registered completion date written into your agreement for sale"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "31 December 2028",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-completion-date",
+            "quote": "Proposed date of completion: 31 December 2028",
+            "location": "Registration",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "agrees",
+          "display": "31 December 2028",
+          "claim": {
+            "_id": "claim-nimbus-greens-agreement-completion-date",
+            "quote": "hand over possession of the apartment on or before 31 December 2028",
+            "location": "Clause 3",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "Draft agreement",
+              "kind": "agreement",
+              "title": "Draft agreement for sale: Apartment A-704",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "March 2027",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-completion-date",
+            "quote": "Possession from March 2027.",
+            "location": "Possession",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-area-2bhk-sqft",
+      "status": "mismatch",
+      "severity": "major",
+      "summary": "The Brochure says 1,050 sq ft; the RERA registration says 690 sq ft. That's 52% more than the RERA registration.",
+      "attribute": {
+        "key": "area_2bhk_sqft",
+        "label": "Size of a 2 BHK",
+        "description": "Area of a 2 BHK apartment in square feet, as stated by the source. Registered documents must state carpet area.",
+        "buyerImpact": "A bigger advertised number usually includes walls, balconies and common areas (\"super built-up\"). Compare prices per sq ft of carpet area.",
+        "askFor": "the carpet area in sq m and sq ft written into the agreement, and the price per sq ft of carpet area"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "690 sq ft",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-area-2bhk-sqft",
+            "quote": "2 BHK | 64.10 sq m (690 sq ft)",
+            "location": "Apartment types (carpet area)",
+            "note": null,
+            "verified": true,
+            "numberValue": 690,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "agrees",
+          "display": "690 sq ft",
+          "claim": {
+            "_id": "claim-nimbus-greens-agreement-area-2bhk-sqft",
+            "quote": "having a carpet area of 64.10 sq m (690 sq ft)",
+            "location": "Clause 1",
+            "note": null,
+            "verified": true,
+            "numberValue": 690,
+            "source": {
+              "shortName": "Draft agreement",
+              "kind": "agreement",
+              "title": "Draft agreement for sale: Apartment A-704",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "1,050 sq ft",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-area-2bhk-sqft",
+            "quote": "2 BHK | 1,050 sq ft",
+            "location": "Homes",
+            "note": "The brochure doesn't say whether this is carpet area.",
+            "verified": true,
+            "numberValue": 1050,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-amenities",
+      "status": "mismatch",
+      "severity": "major",
+      "summary": "Advertised in the Brochure but not in the RERA registration: Swimming pool, Amphitheatre, EV charging.",
+      "attribute": {
+        "key": "amenities",
+        "label": "Amenities and common areas",
+        "description": "Common areas and facilities of the project.",
+        "buyerImpact": "Only registered common areas are legally promised. Advertised extras that aren't registered may never be built.",
+        "askFor": "the list of common areas in the registration, and every advertised amenity written into the agreement"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "Clubhouse, Gymnasium, Jogging track, Children's play area, Landscaped garden",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-amenities",
+            "quote": "Clubhouse with gymnasium - Jogging track (600 m) - Children's play area - Landscaped garden",
+            "location": "Common areas and facilities",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "agrees",
+          "display": "Clubhouse, Gymnasium, Jogging track, Children's play area, Landscaped garden",
+          "claim": {
+            "_id": "claim-nimbus-greens-agreement-amenities",
+            "quote": "clubhouse with gymnasium, jogging track, children's play area and landscaped garden",
+            "location": "Clause 7",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "Draft agreement",
+              "kind": "agreement",
+              "title": "Draft agreement for sale: Apartment A-704",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "Clubhouse, Gymnasium, Swimming pool, Jogging track, Children's play area, Amphitheatre, EV charging",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-amenities",
+            "quote": "Grand clubhouse with gymnasium - Rooftop infinity pool - 1 km jogging track - Children's play area - Open-air amphitheatre - EV charging point at every parking space",
+            "location": "Lifestyle amenities",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-parking-price-inr",
+      "status": "mismatch",
+      "severity": "major",
+      "summary": "The Brochure says ₹0 (free); the Draft agreement says ₹4,50,000.",
+      "attribute": {
+        "key": "parking_price_inr",
+        "label": "Price of covered parking",
+        "description": "What the buyer pays for one covered car parking space, in rupees. Free parking is 0.",
+        "buyerImpact": "Parking charged separately adds to your total cost.",
+        "askFor": "the parking allotment and its price written into the agreement"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "₹4,50,000",
+          "claim": {
+            "_id": "claim-nimbus-greens-agreement-parking-price-inr",
+            "quote": "Covered car parking space (1 no.) | ₹4,50,000",
+            "location": "Clause 2",
+            "note": null,
+            "verified": true,
+            "numberValue": 450000,
+            "source": {
+              "shortName": "Draft agreement",
+              "kind": "agreement",
+              "title": "Draft agreement for sale: Apartment A-704",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "₹0 (free)",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-parking-price-inr",
+            "quote": "Free covered parking for every home.",
+            "location": "Parking",
+            "note": null,
+            "verified": true,
+            "numberValue": 0,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-price-2bhk-total-inr",
+      "status": "mismatch",
+      "severity": "critical",
+      "summary": "The Brochure says ₹72,00,000; the Draft agreement says ₹81,55,000. That's 12% less than the Draft agreement.",
+      "attribute": {
+        "key": "price_2bhk_total_inr",
+        "label": "Total cost of a 2 BHK",
+        "description": "Everything the buyer pays the builder for a 2 BHK, in rupees, as stated by the source.",
+        "buyerImpact": "\"All-inclusive\" prices often leave out parking, GST, deposits and fees. Budget for the agreement total plus stamp duty and registration.",
+        "askFor": "a written cost sheet with every charge, plus stamp duty and registration, before you book"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "₹81,55,000",
+          "claim": {
+            "_id": "claim-nimbus-greens-agreement-price-2bhk-total-inr",
+            "quote": "Total payable: ₹81,55,000, exclusive of stamp duty and registration charges",
+            "location": "Clause 2",
+            "note": null,
+            "verified": true,
+            "numberValue": 8155000,
+            "source": {
+              "shortName": "Draft agreement",
+              "kind": "agreement",
+              "title": "Draft agreement for sale: Apartment A-704",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "₹72,00,000",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-price-2bhk-total-inr",
+            "quote": "₹72 lakh all-inclusive",
+            "location": "Homes",
+            "note": null,
+            "verified": true,
+            "numberValue": 7200000,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-environmental-clearance",
+      "status": "mismatch",
+      "severity": "critical",
+      "summary": "The Brochure says \"Granted\"; the RERA registration says \"Applied, awaited\".",
+      "attribute": {
+        "key": "environmental_clearance",
+        "label": "Environmental clearance",
+        "description": "Status of the project's environmental clearance.",
+        "buyerImpact": "Without environmental clearance, authorities can stop construction, which delays possession.",
+        "askFor": "copies of all approvals, with the environmental clearance status in writing"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "Applied, awaited",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-environmental-clearance",
+            "quote": "Environmental clearance | Applied, awaited",
+            "location": "Approvals and clearances",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "conflicts",
+          "display": "Granted",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-environmental-clearance",
+            "quote": "All approvals in place.",
+            "location": "Approvals",
+            "note": null,
+            "verified": true,
+            "numberValue": null,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-land-area-acres",
+      "status": "match",
+      "severity": "minor",
+      "summary": "Both sources agree: 2.1 acres.",
+      "attribute": {
+        "key": "land_area_acres",
+        "label": "Land area",
+        "description": "Total land area of the project, in acres.",
+        "buyerImpact": "Less land than advertised usually means less open space per home.",
+        "askFor": "the land area and survey numbers from the registration and the title documents"
+      },
+      "entries": [
+        {
+          "role": "reference",
+          "display": "2.1 acres",
+          "claim": {
+            "_id": "claim-nimbus-greens-registration-land-area-acres",
+            "quote": "Land area of project: 8,498 sq m (2.10 acres)",
+            "location": "Registration",
+            "note": null,
+            "verified": true,
+            "numberValue": 2.1,
+            "source": {
+              "shortName": "RERA registration",
+              "kind": "registration",
+              "title": "RERA registration details: Nimbus Greens Phase 1",
+              "url": null
+            }
+          }
+        },
+        {
+          "role": "agrees",
+          "display": "2.1 acres",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-land-area-acres",
+            "quote": "set on 2.1 acres of green",
+            "location": "Welcome home",
+            "note": null,
+            "verified": true,
+            "numberValue": 2.1,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-advance-before-agreement-pct",
+      "status": "violation",
+      "severity": "critical",
+      "summary": "The Brochure says 20%, but the RERA Act 2016 caps it at 10%.",
+      "attribute": {
+        "key": "advance_before_agreement_pct",
+        "label": "Payment before a registered agreement",
+        "description": "Share of the apartment's cost taken as advance or booking amount before a written agreement for sale is signed and registered, in percent.",
+        "buyerImpact": "The law caps what a builder can take before the agreement for sale is signed and registered. Don't pay more than that up front.",
+        "askFor": "a registered agreement for sale before you pay more than the legal booking amount, and a receipt for anything already paid"
+      },
+      "entries": [
+        {
+          "role": "limit",
+          "display": "10%",
+          "claim": {
+            "_id": "claim-law-rera-act-2016-advance-before-agreement-pct",
+            "quote": "shall not accept a sum more than ten per cent of the cost of the apartment",
+            "location": "Section 13(1)",
+            "note": null,
+            "verified": true,
+            "numberValue": 10,
+            "source": {
+              "shortName": "RERA Act 2016",
+              "kind": "law",
+              "title": "The Real Estate (Regulation and Development) Act, 2016",
+              "url": "https://rera.mohua.gov.in/real-estate-regulation-and-development-act-2016.html"
+            }
+          }
+        },
+        {
+          "role": "violates",
+          "display": "20%",
+          "claim": {
+            "_id": "claim-nimbus-greens-brochure-advance-before-agreement-pct",
+            "quote": "Pay just 20% on booking to lock today's price.",
+            "location": "Easy payment plan",
+            "note": null,
+            "verified": true,
+            "numberValue": 20,
+            "source": {
+              "shortName": "Brochure",
+              "kind": "marketing",
+              "title": "Nimbus Greens marketing brochure (August 2026)",
+              "url": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_id": "finding-nimbus-greens-defect-liability-years",
+      "status": "violation",
+      "severity": "major",
+      "summary": "The Draft agreement says 1 year, but the RERA Act 2016 requires at least 5 years.",
+      "attribute": {
+        "key": "defect_liability_years",
+        "label": "Defect liability period",
+        "description": "How long after possession the builder must fix structural and workmanship defects free of charge, in years.",
+        "buyerImpact": "The law makes the builder fix defects reported within five years of possession, free of charge. A shorter period in your agreement gives you less than the law does.",
+        "askFor": "the defect liability clause corrected to five years from possession, as the Act requires"
+      },
+      "entries": [
+        {
+          "role": "limit",
+          "display": "5 years",
+          "claim": {
+            "_id": "claim-law-rera-act-2016-defect-liability-years",
+            "quote": "within a period of five years by the allottee from the date of handing over possession",
+            "location": "Section 14(3)",
+            "note": null,
+            "verified": true,
+            "numberValue": 5,
+            "source": {
+              "shortName": "RERA Act 2016",
+              "kind": "law",
+              "title": "The Real Estate (Regulation and Development) Act, 2016",
+              "url": "https://rera.mohua.gov.in/real-estate-regulation-and-development-act-2016.html"
+            }
+          }
+        },
+        {
+          "role": "violates",
+          "display": "1 year",
+          "claim": {
+            "_id": "claim-nimbus-greens-agreement-defect-liability-years",
+            "quote": "within a period of one year from the date of handing over possession",
+            "location": "Clause 8",
+            "note": null,
+            "verified": true,
+            "numberValue": 1,
+            "source": {
+              "shortName": "Draft agreement",
+              "kind": "agreement",
+              "title": "Draft agreement for sale: Apartment A-704",
+              "url": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

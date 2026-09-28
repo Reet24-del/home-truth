@@ -1,0 +1,45 @@
+{
+  "projectClaims": [
+    { "attribute": "promoter_name", "source": "brochure", "textValue": "Kestrel Habitat Pvt. Ltd.", "quote": "Kestrel Habitat Pvt. Ltd. has delivered homes that families love.", "location": "Why Kestrel Habitat" },
+    { "attribute": "promoter_name", "source": "registration", "textValue": "Kestrel Habitat Pvt. Ltd.", "quote": "Promoter: Kestrel Habitat Pvt. Ltd.", "location": "Registration" },
+    { "attribute": "promoter_name", "source": "agreement", "textValue": "Kestrel Habitat Pvt. Ltd.", "quote": "made between Kestrel Habitat Pvt. Ltd. (the \"Promoter\")", "location": "Preamble" },
+
+    { "attribute": "tower_count", "source": "brochure", "numberValue": 4, "quote": "a landmark address of 4 iconic towers", "location": "Welcome home" },
+    { "attribute": "tower_count", "source": "registration", "numberValue": 3, "quote": "a fourth building (D). These are not part of this registration", "location": "Buildings in this registration (A, B and C)" },
+
+    { "attribute": "floors_per_tower", "source": "brochure", "numberValue": 18, "quote": "4 iconic towers rising G+18 storeys", "location": "Welcome home" },
+    { "attribute": "floors_per_tower", "source": "registration", "numberValue": 12, "quote": "Building plan sanction (Buildings A to C, Ground + 12)", "location": "Approvals and clearances" },
+
+    { "attribute": "completion_date", "source": "brochure", "dateValue": "2027-03", "quote": "Possession from March 2027.", "location": "Possession" },
+    { "attribute": "completion_date", "source": "registration", "dateValue": "2028-12-31", "quote": "Proposed date of completion: 31 December 2028", "location": "Registration" },
+    { "attribute": "completion_date", "source": "agreement", "dateValue": "2028-12-31", "quote": "hand over possession of the apartment on or before 31 December 2028", "location": "Clause 3" },
+
+    { "attribute": "area_2bhk_sqft", "source": "brochure", "numberValue": 1050, "quote": "2 BHK | 1,050 sq ft", "location": "Homes", "note": "The brochure doesn't say whether this is carpet area." },
+    { "attribute": "area_2bhk_sqft", "source": "registration", "numberValue": 690, "quote": "2 BHK | 64.10 sq m (690 sq ft)", "location": "Apartment types (carpet area)" },
+    { "attribute": "area_2bhk_sqft", "source": "agreement", "numberValue": 690, "quote": "having a carpet area of 64.10 sq m (690 sq ft)", "location": "Clause 1" },
+
+    { "attribute": "amenities", "source": "brochure", "listValue": ["clubhouse", "gym", "swimming_pool", "jogging_track", "play_area", "amphitheatre", "ev_charging"], "quote": "Grand clubhouse with gymnasium - Rooftop infinity pool - 1 km jogging track - Children's play area - Open-air amphitheatre - EV charging point at every parking space", "location": "Lifestyle amenities" },
+    { "attribute": "amenities", "source": "registration", "listValue": ["clubhouse", "gym", "jogging_track", "play_area", "garden"], "quote": "Clubhouse with gymnasium - Jogging track (600 m) - Children's play area - Landscaped garden", "location": "Common areas and facilities" },
+    { "attribute": "amenities", "source": "agreement", "listValue": ["clubhouse", "gym", "jogging_track", "play_area", "garden"], "quote": "clubhouse with gymnasium, jogging track, children's play area and landscaped garden", "location": "Clause 7" },
+
+    { "attribute": "parking_price_inr", "source": "brochure", "numberValue": 0, "quote": "Free covered parking for every home.", "location": "Parking" },
+    { "attribute": "parking_price_inr", "source": "agreement", "numberValue": 450000, "quote": "Covered car parking space (1 no.) | ₹4,50,000", "location": "Clause 2" },
+
+    { "attribute": "price_2bhk_total_inr", "source": "brochure", "numberValue": 7200000, "quote": "₹72 lakh all-inclusive", "location": "Homes" },
+    { "attribute": "price_2bhk_total_inr", "source": "agreement", "numberValue": 8155000, "quote": "Total payable: ₹81,55,000, exclusive of stamp duty and registration charges", "location": "Clause 2" },
+
+    { "attribute": "environmental_clearance", "source": "brochure", "textValue": "granted", "quote": "All approvals in place.", "location": "Approvals" },
+    { "attribute": "environmental_clearance", "source": "registration", "textValue": "pending", "quote": "Environmental clearance | Applied, awaited", "location": "Approvals and clearances" },
+
+    { "attribute": "land_area_acres", "source": "brochure", "numberValue": 2.1, "quote": "set on 2.1 acres of green", "location": "Welcome home" },
+    { "attribute": "land_area_acres", "source": "registration", "numberValue": 2.1, "quote": "Land area of project: 8,498 sq m (2.10 acres)", "location": "Registration" },
+
+    { "attribute": "advance_before_agreement_pct", "source": "brochure", "numberValue": 20, "quote": "Pay just 20% on booking to lock today's price.", "location": "Easy payment plan" },
+
+    { "attribute": "defect_liability_years", "source": "agreement", "numberValue": 1, "quote": "within a period of one year from the date of handing over possession", "location": "Clause 8" }
+  ],
+  "lawClaims": [
+    { "attribute": "advance_before_agreement_pct", "source": "rera-act-2016", "numberValue": 10, "quote": "shall not accept a sum more than ten per cent of the cost of the apartment", "location": "Section 13(1)" },
+    { "attribute": "defect_liability_years", "source": "rera-act-2016", "numberValue": 5, "quote": "within a period of five years by the allottee from the date of handing over possession", "location": "Section 14(3)" }
+  ]
+}

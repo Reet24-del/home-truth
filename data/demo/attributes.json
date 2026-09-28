@@ -1,0 +1,182 @@
+[
+  {
+    "key": "promoter_name",
+    "label": "Builder (promoter) name",
+    "description": "Legal name of the company developing and selling the project.",
+    "valueType": "text",
+    "comparison": "equal",
+    "severity": "critical",
+    "buyerImpact": "The company you sign with and pay must be the registered promoter.",
+    "askFor": "the promoter's name and company number on the registration certificate, and the same name on the agreement and every receipt"
+  },
+  {
+    "key": "tower_count",
+    "label": "Buildings in this phase",
+    "description": "Number of buildings (towers) covered by the project registration or advertised for the project.",
+    "valueType": "number",
+    "unit": "buildings",
+    "comparison": "equal",
+    "severity": "major",
+    "buyerImpact": "A building that isn't in the registration has no registered completion date or sanctioned plan yet.",
+    "askFor": "the registration certificate for every building in the project, including any tower sold as a later phase"
+  },
+  {
+    "key": "floors_per_tower",
+    "label": "Floors per building",
+    "description": "Floors above ground in each building (G+12 means 12).",
+    "valueType": "number",
+    "unit": "floors above ground",
+    "comparison": "equal",
+    "severity": "critical",
+    "buyerImpact": "Flats above the sanctioned floor have no approved plan. Don't book them until an amended sanction is registered.",
+    "askFor": "the sanctioned building plan showing the floor you are being sold, and the amended sanction if the builder claims more floors"
+  },
+  {
+    "key": "completion_date",
+    "label": "Possession / completion date",
+    "description": "When the project will be completed and possession handed over.",
+    "valueType": "date",
+    "comparison": "equal",
+    "severity": "critical",
+    "buyerImpact": "The registered date is the one the builder is legally held to. Plan rent, loan EMIs and your move around it.",
+    "askFor": "the registered completion date written into your agreement for sale"
+  },
+  {
+    "key": "area_2bhk_sqft",
+    "label": "Size of a 2 BHK",
+    "description": "Area of a 2 BHK apartment in square feet, as stated by the source. Registered documents must state carpet area.",
+    "valueType": "number",
+    "unit": "sq ft",
+    "tolerance": 0.02,
+    "comparison": "equal",
+    "severity": "major",
+    "buyerImpact": "A bigger advertised number usually includes walls, balconies and common areas (\"super built-up\"). Compare prices per sq ft of carpet area.",
+    "askFor": "the carpet area in sq m and sq ft written into the agreement, and the price per sq ft of carpet area"
+  },
+  {
+    "key": "amenities",
+    "label": "Amenities and common areas",
+    "description": "Common areas and facilities of the project.",
+    "valueType": "list",
+    "comparison": "equal",
+    "severity": "major",
+    "buyerImpact": "Only registered common areas are legally promised. Advertised extras that aren't registered may never be built.",
+    "askFor": "the list of common areas in the registration, and every advertised amenity written into the agreement",
+    "vocabulary": [
+      {
+        "key": "clubhouse",
+        "label": "Clubhouse"
+      },
+      {
+        "key": "gym",
+        "label": "Gymnasium"
+      },
+      {
+        "key": "swimming_pool",
+        "label": "Swimming pool"
+      },
+      {
+        "key": "jogging_track",
+        "label": "Jogging track"
+      },
+      {
+        "key": "play_area",
+        "label": "Children's play area"
+      },
+      {
+        "key": "amphitheatre",
+        "label": "Amphitheatre"
+      },
+      {
+        "key": "ev_charging",
+        "label": "EV charging"
+      },
+      {
+        "key": "garden",
+        "label": "Landscaped garden"
+      }
+    ]
+  },
+  {
+    "key": "parking_price_inr",
+    "label": "Price of covered parking",
+    "description": "What the buyer pays for one covered car parking space, in rupees. Free parking is 0.",
+    "valueType": "money",
+    "unit": "INR",
+    "tolerance": 0.005,
+    "comparison": "equal",
+    "severity": "major",
+    "buyerImpact": "Parking charged separately adds to your total cost.",
+    "askFor": "the parking allotment and its price written into the agreement"
+  },
+  {
+    "key": "price_2bhk_total_inr",
+    "label": "Total cost of a 2 BHK",
+    "description": "Everything the buyer pays the builder for a 2 BHK, in rupees, as stated by the source.",
+    "valueType": "money",
+    "unit": "INR",
+    "tolerance": 0.005,
+    "comparison": "equal",
+    "severity": "critical",
+    "buyerImpact": "\"All-inclusive\" prices often leave out parking, GST, deposits and fees. Budget for the agreement total plus stamp duty and registration.",
+    "askFor": "a written cost sheet with every charge, plus stamp duty and registration, before you book"
+  },
+  {
+    "key": "environmental_clearance",
+    "label": "Environmental clearance",
+    "description": "Status of the project's environmental clearance.",
+    "valueType": "text",
+    "comparison": "equal",
+    "severity": "critical",
+    "buyerImpact": "Without environmental clearance, authorities can stop construction, which delays possession.",
+    "askFor": "copies of all approvals, with the environmental clearance status in writing",
+    "vocabulary": [
+      {
+        "key": "granted",
+        "label": "Granted"
+      },
+      {
+        "key": "pending",
+        "label": "Applied, awaited"
+      },
+      {
+        "key": "not_applied",
+        "label": "Not applied"
+      }
+    ]
+  },
+  {
+    "key": "land_area_acres",
+    "label": "Land area",
+    "description": "Total land area of the project, in acres.",
+    "valueType": "number",
+    "unit": "acres",
+    "tolerance": 0.02,
+    "comparison": "equal",
+    "severity": "minor",
+    "buyerImpact": "Less land than advertised usually means less open space per home.",
+    "askFor": "the land area and survey numbers from the registration and the title documents"
+  },
+  {
+    "key": "advance_before_agreement_pct",
+    "label": "Payment before a registered agreement",
+    "description": "Share of the apartment's cost taken as advance or booking amount before a written agreement for sale is signed and registered, in percent.",
+    "valueType": "number",
+    "unit": "%",
+    "comparison": "at_most",
+    "severity": "critical",
+    "buyerImpact": "The law caps what a builder can take before the agreement for sale is signed and registered. Don't pay more than that up front.",
+    "askFor": "a registered agreement for sale before you pay more than the legal booking amount, and a receipt for anything already paid"
+  },
+  {
+    "key": "defect_liability_years",
+    "label": "Defect liability period",
+    "description": "How long after possession the builder must fix structural and workmanship defects free of charge, in years.",
+    "valueType": "number",
+    "unit": "years",
+    "comparison": "at_least",
+    "severity": "major",
+    "buyerImpact": "The law makes the builder fix defects reported within five years of possession, free of charge. A shorter period in your agreement gives you less than the law does.",
+    "askFor": "the defect liability clause corrected to five years from possession, as the Act requires"
+  }
+]

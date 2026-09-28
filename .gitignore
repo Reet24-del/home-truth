@@ -1,0 +1,18 @@
+node_modules
+.next
+dist
+.sanity
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+
+# Exclude environment variants and credentials; retain setup templates
+.env*
+!.env.example
+*.pem
+*.key
+*.log
+coverage/
+.vercel/
