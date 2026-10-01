@@ -30,7 +30,9 @@ A keyword search over these documents returns "G+18" and "March 2027" confidentl
 
 ## Demo
 
-TODO: link to the deployed app, plus a 60 to 90 second video:
+**Live (demo data, no sign-in):** https://home-truth.vercel.app
+
+TODO: a 60 to 90 second video:
 0. The landing page: the tower is built from the project's own claims. Twelve solid floors are sanctioned; the six red ones above the ring were only ever advertised. Drag it.
 1. The report: 10 of 12 facts don't hold up. Open "Floors per building" and show the exact words.
 2. Ask "The broker is offering me flat B-1502. Is that okay?" and open **How I checked**.
@@ -40,7 +42,7 @@ TODO: link to the deployed app, plus a 60 to 90 second video:
 
 ## Code
 
-TODO: link to the repository.
+https://github.com/Reet24-del/home-truth
 
 ## How I Used Sanity
 
