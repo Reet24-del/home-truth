@@ -30,7 +30,7 @@ A keyword search over these documents returns "G+18" and "March 2027" confidentl
 
 ## Demo
 
-**Live (demo data, no sign-in):** https://home-truth.vercel.app
+**Live (demo data, no sign-in):** https://home-truth-theta.vercel.app
 
 TODO: a 60 to 90 second video:
 0. The landing page: the tower is built from the project's own claims. Twelve solid floors are sanctioned; the six red ones above the ring were only ever advertised. Drag it.
