@@ -28,7 +28,7 @@ data/demo/*.md ──seed──▶ Sanity dataset
   GROQ mode, narrowed per project          Knowledge Base mode: the RERA Act PDF
   with ?groqFilter=                        plus every sourceDocument body, with
                                            conflicts resolved into instructions
-            └───────────── Claude (MCP connector) ────────┘
+            └──────────── Groq (remote MCP) ──────────────┘
                                   │
                   web/ (Next.js): report page + chat agent
 ```
@@ -49,13 +49,13 @@ Open http://localhost:3000. The landing page builds the project in 3D from its o
 
 Pick Nimbus Greens for the full report. It works offline from `web/demo/nimbus-greens.json`; chat stays off until Sanity Context is connected. **Questions to ask the builder** turns the findings into a printable checklist.
 
-Stack: Next.js 16 and React 19, three.js for the tower, Sanity Studio v6, and Claude through the Anthropic SDK.
+Stack: Next.js 16 and React 19, three.js for the tower, Sanity Studio v6, Groq for the chat agent, and Claude through the Anthropic SDK for claim extraction.
 
 Nimbus Greens, Kestrel Habitat and registration DEMO-RERA-0001 are fictional. The RERA Act quotes are real and were checked against the [official text](https://rera.mohua.gov.in/real-estate-regulation-and-development-act-2016.html).
 
 ## Connect Sanity (about 30 minutes)
 
-You need Node 22.12+, a Sanity account, and an Anthropic API key for the chat.
+You need Node 22.12+, a Sanity account, and a Groq API key for the chat.
 
 ### 1. Create the project and load the data
 
@@ -152,7 +152,9 @@ With real builders, present findings as differences to ask about, from public do
 
 ## Model
 
-The agent and the extractor use `claude-opus-5` by default (set `ANTHROPIC_MODEL` to change it). Both enable server-side fallbacks (`fallbacks: "default"`), so a request the model declines is retried on Anthropic's recommended fallback model instead of failing.
+The chat agent uses `openai/gpt-oss-120b` on Groq by default (set `GROQ_MODEL` to change it). Groq's Responses API connects to both Context MCP endpoints and runs the tool calls server-side.
+
+The claim extractor uses `claude-opus-5` by default (set `ANTHROPIC_MODEL` to change it), with server-side fallbacks (`fallbacks: "default"`), so a request the model declines is retried on Anthropic's recommended fallback model instead of failing.
 
 ## Deploy
 

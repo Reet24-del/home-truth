@@ -1,6 +1,4 @@
-import Anthropic from '@anthropic-ai/sdk'
-
-import {agentConfigError, runAgent} from '@/lib/agent'
+import {agentConfigError, GroqError, runAgent} from '@/lib/agent'
 import type {AgentEvent, ChatMessage} from '@/lib/types'
 
 export const runtime = 'nodejs'
@@ -36,12 +34,12 @@ function parseRequest(body: unknown): ChatRequest | string {
 }
 
 function describeError(error: unknown): string {
-  if (error instanceof Anthropic.AuthenticationError) {
-    return 'The Anthropic API key is missing or invalid. Check ANTHROPIC_API_KEY.'
+  if (error instanceof GroqError) {
+    if (error.status === 401) return 'The Groq API key is missing or invalid. Check GROQ_API_KEY.'
+    if (error.status === 429) return 'Too many requests right now. Try again in a minute.'
+    return `The AI service returned an error (${error.status}): ${error.message}`
   }
-  if (error instanceof Anthropic.RateLimitError) return 'Too many requests right now. Try again in a minute.'
-  if (error instanceof Anthropic.APIUserAbortError) return 'Stopped.'
-  if (error instanceof Anthropic.APIError) return `The AI service returned an error (${error.status}): ${error.message}`
+  if (error instanceof Error && error.name === 'AbortError') return 'Stopped.'
   return error instanceof Error ? error.message : 'Something went wrong.'
 }
 

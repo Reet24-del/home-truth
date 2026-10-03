@@ -50,7 +50,7 @@ https://github.com/Reet24-del/home-truth
 
 **Deterministic findings.** A small comparison engine turns claims into `finding` documents. The registration outranks the agreement, which outranks marketing, and the Act sets limits. No model is involved, so the report is reproducible and every line traces back to a quote.
 
-**Sanity Context, both modes.** The agent connects to two Context MCP endpoints through Claude's MCP connector:
+**Sanity Context, both modes.** The agent connects to two Context MCP endpoints through Groq's remote MCP support:
 
 - `home-truth-data` (GROQ mode) for exact facts. Each chat narrows it to one project with `?groqFilter=`, and I drop `initial_context` from its tool list because the system prompt already describes the schema.
 - `home-truth-kb` (Knowledge Base mode), built from the RERA Act PDF plus every `sourceDocument` body through a dataset source. The agent reads the outline, then the entries it needs.

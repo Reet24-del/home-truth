@@ -187,7 +187,7 @@ Content model, comparison engine with tests, report page, agent code, fictional 
 
 **Phase 1: submission** *(by 4 October 2026)*
 Connect Sanity Context, build the Knowledge Base and resolve its conflicts, deploy, record the demo, publish the DEV post with the project ID and a public dataset.
-Depends on: Context and Knowledge Bases enabled for the organization, an organization token, an Anthropic API key.
+Depends on: Context and Knowledge Bases enabled for the organization, an organization token, a Groq API key.
 
 **Phase 2: one real project** *(2 to 4 weeks after)*
 Answer the legal question, load one project from public documents, add unit-level claims and the questions-to-ask export, and run it past five buyers.

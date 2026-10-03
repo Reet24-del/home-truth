@@ -1,16 +1,22 @@
-import Anthropic from '@anthropic-ai/sdk'
-
 import type {AgentEvent, ChatMessage} from './types'
 
-// The agent reaches Sanity Context through Claude's MCP connector: Anthropic's
-// API connects to both Context MCP endpoints and runs the tool calls
-// server-side, so this file only streams the conversation.
+// The agent reaches Sanity Context through Groq's remote MCP support: Groq's
+// Responses API connects to both Context MCP endpoints and runs the tool calls
+// server-side, so this file only sends the conversation and relays the result.
 
-const MODEL = process.env.ANTHROPIC_MODEL || 'claude-opus-5'
-const DATA_SERVER = 'sanity-data'
-const KB_SERVER = 'sanity-kb'
-// A long server-tool turn can pause; we resume it this many times at most.
-const MAX_CONTINUATIONS = 4
+const GROQ_URL = 'https://api.groq.com/openai/v1/responses'
+const MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-120b'
+const DATA_SERVER = 'sanity_data'
+const KB_SERVER = 'sanity_kb'
+
+export class GroqError extends Error {
+  constructor(
+    readonly status: number,
+    message: string,
+  ) {
+    super(message)
+  }
+}
 
 const SYSTEM_PROMPT = `You are Home Truth, an assistant that helps homebuyers in India check a real-estate project before they pay. You compare what the builder advertises with what is registered with the state Real Estate Regulatory Authority (RERA), what the agreement for sale says, and what the Real Estate (Regulation and Development) Act, 2016 requires.
 
@@ -54,6 +60,7 @@ function kbUrl(): string | null {
 /** Returns what's missing for the chat agent, or null when it's ready. */
 export function agentConfigError(): string | null {
   const missing: string[] = []
+  if (!process.env.GROQ_API_KEY) missing.push('GROQ_API_KEY')
   if (!process.env.SANITY_ORGANIZATION_TOKEN) missing.push('SANITY_ORGANIZATION_TOKEN')
   if (!process.env.SANITY_CONTEXT_MCP_URL) missing.push('SANITY_CONTEXT_MCP_URL')
   if (!kbUrl()) missing.push('SANITY_CONTEXT_KB_MCP_URL (or SANITY_KNOWLEDGE_BASE_ID)')
@@ -92,74 +99,89 @@ interface RunAgentOptions {
   signal: AbortSignal
 }
 
-export async function runAgent({projectId, projectLabel, messages, emit, signal}: RunAgentOptions) {
-  const client = new Anthropic()
-  const token = process.env.SANITY_ORGANIZATION_TOKEN!
-  const conversation: Anthropic.Beta.BetaMessageParam[] = messages.map((m) => ({
-    role: m.role,
-    content: m.content,
-  }))
+// The parts of a Responses API output item this file reads.
+interface OutputItem {
+  type: string
+  server_label?: string
+  name?: string
+  arguments?: string
+  error?: unknown
+  content?: {type: string; text?: string}[]
+}
 
-  for (let turn = 0; turn <= MAX_CONTINUATIONS; turn++) {
-    const stream = client.beta.messages.stream(
-      {
-        model: MODEL,
-        max_tokens: 64000,
-        betas: ['mcp-client-2025-11-20', 'server-side-fallback-2026-07-01'],
-        fallbacks: 'default',
-        thinking: {type: 'adaptive'},
-        cache_control: {type: 'ephemeral'},
-        system: [
-          {type: 'text', text: SYSTEM_PROMPT},
-          {
-            type: 'text',
-            text: `The buyer is looking at ${projectLabel} (document id "${projectId}"). ${DATA_SERVER} is already limited to this project, the attribute definitions and the law. Today is ${new Date().toISOString().slice(0, 10)}.`,
-          },
-        ],
-        mcp_servers: [
-          {type: 'url', name: DATA_SERVER, url: scopedDataUrl(projectId), authorization_token: token},
-          {type: 'url', name: KB_SERVER, url: kbUrl()!, authorization_token: token},
-        ],
-        tools: [
-          {type: 'mcp_toolset', mcp_server_name: DATA_SERVER},
-          {type: 'mcp_toolset', mcp_server_name: KB_SERVER},
-        ],
-        messages: conversation,
-      },
-      {signal},
-    )
-
-    // Separate text that comes before and after tool calls into paragraphs.
-    let wroteText = turn > 0
-    stream.on('streamEvent', (event) => {
-      if (event.type === 'content_block_start' && event.content_block.type === 'text' && wroteText) {
-        emit({type: 'text', text: '\n\n'})
-      }
-    })
-    stream.on('text', (delta) => {
-      wroteText = true
-      emit({type: 'text', text: delta})
-    })
-    stream.on('contentBlock', (block) => {
-      if (block.type === 'mcp_tool_use') {
-        emit({type: 'step', server: block.server_name, tool: block.name, detail: describeStep(block.name, block.input)})
-      } else if (block.type === 'mcp_tool_result' && block.is_error) {
-        emit({type: 'step_failed'})
-      }
-    })
-
-    const message = await stream.finalMessage()
-
-    if (message.stop_reason === 'pause_turn') {
-      conversation.push({role: 'assistant', content: message.content})
-      continue
-    }
-    if (message.stop_reason === 'refusal') {
-      emit({type: 'error', message: 'The model declined to answer this. Try rephrasing your question.'})
-    } else if (message.stop_reason === 'max_tokens') {
-      emit({type: 'notice', message: 'The answer was cut off because it reached the length limit.'})
-    }
-    return
+function parseArguments(raw: string | undefined): unknown {
+  try {
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
   }
-  emit({type: 'notice', message: 'Stopped after too many steps. Try a narrower question.'})
+}
+
+export async function runAgent({projectId, projectLabel, messages, emit, signal}: RunAgentOptions) {
+  const authorization = `Bearer ${process.env.SANITY_ORGANIZATION_TOKEN}`
+  const context = `The buyer is looking at ${projectLabel} (document id "${projectId}"). ${DATA_SERVER} is already limited to this project, the attribute definitions and the law. Today is ${new Date().toISOString().slice(0, 10)}.`
+
+  const response = await fetch(GROQ_URL, {
+    method: 'POST',
+    headers: {Authorization: `Bearer ${process.env.GROQ_API_KEY}`, 'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      model: MODEL,
+      instructions: `${SYSTEM_PROMPT}\n\n${context}`,
+      input: messages.map((m) => ({role: m.role, content: m.content})),
+      tools: [
+        {
+          type: 'mcp',
+          server_label: DATA_SERVER,
+          server_url: scopedDataUrl(projectId),
+          server_description: 'Structured record for this project: findings, claims, attributes and source documents (GROQ).',
+          headers: {Authorization: authorization},
+          require_approval: 'never',
+        },
+        {
+          type: 'mcp',
+          server_label: KB_SERVER,
+          server_url: kbUrl()!,
+          server_description: 'Knowledge Base: the RERA Act and the project documents as cited entries.',
+          headers: {Authorization: authorization},
+          require_approval: 'never',
+        },
+      ],
+      stream: false,
+    }),
+    signal,
+  })
+
+  const body = await response.json().catch(() => null)
+  if (!response.ok) {
+    throw new GroqError(response.status, body?.error?.message ?? response.statusText)
+  }
+
+  // Groq has already run every tool call; replay them as steps, then the answer.
+  let wroteText = false
+  for (const item of (body.output ?? []) as OutputItem[]) {
+    if (item.type === 'mcp_call' && item.name) {
+      emit({
+        type: 'step',
+        server: item.server_label ?? '',
+        tool: item.name,
+        detail: describeStep(item.name, parseArguments(item.arguments)),
+      })
+      if (item.error) emit({type: 'step_failed'})
+    } else if (item.type === 'message') {
+      for (const part of item.content ?? []) {
+        // gpt-oss leaves tool-result markers such as 【result[0].quote】 in its text.
+        const text = part.text?.replace(/【[^】]*】/g, '')
+        if (part.type !== 'output_text' || !text) continue
+        if (wroteText) emit({type: 'text', text: '\n\n'})
+        emit({type: 'text', text})
+        wroteText = true
+      }
+    }
+  }
+
+  if (body.status === 'incomplete') {
+    emit({type: 'notice', message: 'The answer was cut off because it reached the length limit.'})
+  } else if (!wroteText) {
+    emit({type: 'error', message: 'The model returned no answer. Try rephrasing your question.'})
+  }
 }
