@@ -125,12 +125,6 @@ The system prompt gives it the trust order and one hard rule: never invent a quo
 
 The demo dataset has 4 source documents, 12 attributes, 28 claims and 12 computed findings.
 
-## Agent Session
-
-The whole build, from "connect my two github projects to sanity" to the demo video, was one Claude Code session:
-
-{% agent_session building-home-truth-a-rera-checking-agent-on-sanity-context-be7jrx %}
-
 ---
 
 Ananya didn't pay 20% that day.
