@@ -169,8 +169,9 @@ export async function runAgent({projectId, projectLabel, messages, emit, signal}
       if (item.error) emit({type: 'step_failed'})
     } else if (item.type === 'message') {
       for (const part of item.content ?? []) {
-        // gpt-oss leaves tool-result markers such as 【result[0].quote】 in its text.
-        const text = part.text?.replace(/【[^】]*】/g, '')
+        // gpt-oss leaves tool-result markers such as 【result[0].quote】 in its text,
+        // and puts <br> inside table cells, which the chat shows literally.
+        const text = part.text?.replace(/【[^】]*】/g, '').replace(/\s*<br\s*\/?>\s*/gi, ' ')
         if (part.type !== 'output_text' || !text) continue
         if (wroteText) emit({type: 'text', text: '\n\n'})
         emit({type: 'text', text})
