@@ -127,7 +127,9 @@ The demo dataset has 4 source documents, 12 attributes, 28 claims and 12 compute
 
 ## Agent Session
 
-<!-- TODO: upload the transcript at https://dev.to/agent_sessions/new, slice it to the interesting parts (schema design, the conflict review, the Groq switch), check it for keys, click Make Public, and embed it here. -->
+The whole build, from "connect my two github projects to sanity" to the demo video, was one Claude Code session:
+
+{% agent_session building-home-truth-a-rera-checking-agent-on-sanity-context-be7jrx %}
 
 ---
 
