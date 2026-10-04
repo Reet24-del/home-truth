@@ -9,77 +9,75 @@ tags: devchallenge, sanitychallenge, sanity, ai
 
 ## What I Built
 
-Ananya is 31. She works in Pune, and after eight years of saving she is ready to book her first flat.
+Let me introduce you to Ananya. She's made up, but you probably know someone exactly like her.
 
-The broker has a brochure for Nimbus Greens. It's beautiful: four towers, G+18, a rooftop pool, possession from March 2027, "₹72 lakh all-inclusive, free parking". He also has a request. Pay 20% today, before the offer goes away.
+She's 31, works in Pune, and has spent eight years saving for her first flat. One Sunday she walks into a sales office for a project called Nimbus Greens. The brochure is gorgeous. Four towers rising to eighteen floors, a rooftop pool, possession in March 2027, a 2 BHK of 1,050 square feet for ₹72 lakh "all-inclusive", parking free. The broker is friendly and in a hurry. If she pays 20% today, the price is locked.
 
-Everything Ananya needs to know is public. It's just spread across three documents nobody reads side by side: the project's registration with the state Real Estate Regulatory Authority (RERA), the draft agreement for sale, and the RERA Act itself. Put them next to the brochure and the story changes:
+Here's the part nobody tells her. Everything she needs to make this decision is already public. Every project in India has to be registered with the state's Real Estate Regulatory Authority (RERA), and that registration is what the builder is legally held to. Then there's the draft agreement for sale, and the RERA Act itself. Nobody reads those three next to the brochure. So nobody notices that they tell a different story:
 
-| The brochure says | The record says |
+| What the brochure says | What the record says |
 | --- | --- |
 | 4 towers, G+18 | 3 buildings, sanctioned for Ground + 12 |
-| Possession from March 2027 | Completion 31 December 2028, 21 months later |
+| Possession from March 2027 | Completion on 31 December 2028 |
 | 2 BHK, 1,050 sq ft | 690 sq ft carpet area |
-| Pool, amphitheatre, EV charging | Not in the registered common areas |
+| Rooftop pool, amphitheatre, EV charging | Not in the registered common areas |
 | ₹72 lakh all-inclusive, free parking | ₹81,55,000 in the agreement, ₹4,50,000 of it for parking |
-| All approvals in place | Environmental clearance: applied, awaited |
-| Pay 20% on booking | Section 13(1) of the Act caps it at 10% before a registered agreement |
+| All approvals in place | Environmental clearance applied for, still awaited |
+| Pay 20% on booking | Section 13(1) of the Act allows 10% before a registered agreement |
 
-Ananya and Nimbus Greens are made up. The tricks aren't. Every row is something Indian homebuyers run into, usually years later, usually after the money is gone.
+Nimbus Greens is fictional. Every row in that table isn't. These are the tricks Indian buyers find out about years later, once the money is gone and the building has stopped at twelve floors.
 
-**Home Truth** puts those documents side by side before you pay. It shows every place they disagree, quotes the exact words from each one, and turns the gaps into questions to ask the builder. Then there's an agent you can ask the questions brokers ask you: *"I'm being offered flat B-1502, is that okay?"* or *"Here's the WhatsApp ad, check it."*
+So I built **Home Truth**. You give it a project's documents and it lays them side by side, finds every place they disagree, and shows you the exact sentence from each document so you don't have to take its word for anything. It turns the gaps into a checklist of questions to ask the builder. And it has an agent you can ask the kind of question a broker throws at you on the phone: *"I'm being offered flat B-1502, is that okay?"*
 
-Here's why a search box can't do this. Ask "how many floors does Nimbus Greens have?" and the most confident answer in the pile is the brochure's "G+18". To get it right you need to know three things the text doesn't tell you:
+### Why this needed structured content
 
-1. **Which document outranks which.** The registration is what the builder is legally held to. The brochure is marketing.
-2. **What the law allows.** 20% sounds like a normal booking amount until you know the Act says 10%.
-3. **What the numbers mean.** "1,050 sq ft" and "690 sq ft carpet" describe the same flat. The bigger number is a different measurement, used because it's bigger.
+I tried the obvious version first in my head: dump the documents into a search index and let a model answer. Ask it "how many floors does Nimbus Greens have?" and the loudest, most confident answer in the pile is the brochure's "G+18". It's repeated, it's in large type, and it's wrong.
 
-That knowledge doesn't live in any single document. It lives in the structure, and that's what I built in Sanity.
+Getting it right takes knowledge that isn't written in any single document. You have to know that a registration outranks a brochure. You have to know that the law caps a booking amount at 10%, so a request for 20% is a violation, not a detail. And you have to know that "1,050 sq ft" and "690 sq ft carpet" are the same flat, measured two ways, and the brochure picked the flattering one. That knowledge lives in how the content is modelled. That's the bit I built in Sanity.
 
 ## Demo
 
-**Live:** https://home-truth-theta.vercel.app (no sign-in; open *Nimbus Greens* and try the chat)
+**Live:** https://home-truth-theta.vercel.app. No sign-in. Open *Nimbus Greens* and try the chat.
 
 {% embed https://www.youtube.com/watch?v=aKH4naHK82E %}
 
-What to look for:
+If you'd rather click around yourself, here's the two-minute tour.
 
-- **The tower on the home page is built from the data.** Twelve solid floors are what the sanctioned plan covers. The six translucent red ones above the ring exist only in the brochure. Drag it around.
-- **The brochure is there in 3D**, with the 20% line highlighted and Section 13(1) quoted next to it.
-- **The report:** 10 of 12 facts don't hold up, 5 of them critical. Every finding has a *Show the exact words* drawer with the quote from each document.
-- **Questions to ask the builder:** the findings become a printable checklist that says which document to ask for.
-- **The agent:** ask about flat B-1502. It runs GROQ queries against the project, works out that Building B is sanctioned for Ground + 12, and says a 15th-floor flat has no approved plan. *How I checked* shows every query it ran.
+Start on the home page and drag the building. It's drawn from the data: twelve solid floors are what the sanctioned plan covers, and the six translucent red ones on top only ever existed in the brochure. Scroll down and you can flip through the brochure itself in 3D, with the 20% line highlighted and Section 13(1) of the Act quoted right beside it.
+
+Open the full report. Ten of twelve facts don't hold up, and five of those are critical. Every finding says why it matters to a buyer, and every one has a *Show the exact words* drawer with the quote from each document. One click on *Questions to ask the builder* turns all of it into a printable checklist that names the document to ask for.
+
+Then ask the chat about flat B-1502. It goes to Sanity, checks the registration, sees that Building B is sanctioned for Ground + 12, and tells you a fifteenth-floor flat has no approved plan. Open *How I checked* under the answer and you'll see every query it ran.
 
 ## Code
 
 {% github Reet24-del/home-truth %}
 
-`studio/` is the Sanity Studio, the schema, the comparison engine and the scripts. `web/` is the Next.js 16 site and the agent.
+`studio/` holds the Sanity Studio, the schema, the comparison engine and the scripts. `web/` is the Next.js 16 site, the three.js scenes and the agent.
 
 ## How I Used Sanity
 
-### The content model is the product
+### I started with the schema, because the schema is the product
 
-I started with the schema, because the whole idea depends on it. Five types:
+Before any UI, I sat down with the question "what is a fact, here?" and ended up with five document types.
 
-- **`sourceDocument`**: one document's full text, plus its `kind`: `registration`, `agreement`, `marketing` or `law`. The kind is what lets the system rank sources.
-- **`attribute`**: one fact a buyer cares about, like floors per building, carpet area or possession date. It says how to compare that fact: its unit, a tolerance, a controlled vocabulary, and whether it's checked for equality or against a legal limit.
-- **`claim`**: one document's version of one attribute, with the **exact quote** and where it appears. The demo has 28.
-- **`finding`**: what you get when you compare all the claims for an attribute: `match`, `mismatch`, `violation` or `single_source`.
-- **`project`**: ties it together.
+A `sourceDocument` is one document's full text, plus a `kind`: registration, agreement, marketing or law. That one field is what lets the system know who to believe.
 
-Two rules keep it honest. First, **claims are checked, not trusted.** `npm test` checks every demo quote word for word against its document. Claims that Claude extracts from a new document go through the same check, and arrive marked unverified until a person approves them in the Studio's *Claims to verify* view.
+An `attribute` is something a buyer cares about, like floors per building, carpet area or the possession date. It also says how that fact should be compared: the unit, a tolerance, a controlled vocabulary, and whether it's checked for equality or against a legal limit. "Floors" and "booking amount" behave very differently, and the attribute is where that difference lives.
 
-Second, **findings come from code, not a model.** `studio/lib/compare.ts` ranks the sources (Act > registration > agreement > marketing), applies tolerances and vocabularies, and checks legal limits. The same claims always give the same findings, so every line of the report traces back to a quote. I didn't want an LLM deciding whether a builder broke the law.
+A `claim` is one document's version of one attribute, together with the exact words it came from and where they appear. The demo project has 28 of them. A `finding` is the verdict once all the claims for an attribute are compared: match, mismatch, violation, or only one source. And a `project` ties it all together.
 
-### Sanity Context: a Knowledge Base and two MCP endpoints
+The rule I cared most about was that nothing gets paraphrased. Every claim carries a quote, and `npm test` checks each demo quote word for word against its source document. When Claude extracts claims from a new document, they go through the same check and land in the Studio's *Claims to verify* view, marked unverified, until a person approves them.
 
-The agent reads Sanity through two Context MCP endpoints, one per retrieval mode.
+### Code decides who's wrong, not the model
 
-**`home-truth-data` (GROQ mode)** gives exact facts. Every chat narrows it to one project by adding a `?groqFilter=` to the endpoint URL, so the agent can only see that project, the attribute definitions and the law. Context combines that filter with the endpoint's own, so it can only ever narrow access. I also trimmed its tool list to `groq_query`, `schema_explorer` and `array_field_reader`. The system prompt already describes the schema, so `initial_context` was wasted tokens.
+I didn't want an LLM deciding whether a builder broke the law. So findings come from a small comparison engine, `studio/lib/compare.ts`. It ranks the sources (Act, then registration, then agreement, then marketing), applies the tolerances and vocabularies, and checks legal limits. The same claims always produce the same findings, which means every line of the report can be traced back to a quote. The model's job comes later, and it's a narrower one: explain.
 
-**`home-truth-kb` (Knowledge Base mode)** answers the "what does this mean" questions. I pointed the Knowledge Base at the dataset with this source query:
+### Pointing Sanity Context at it
+
+This is where it got interesting.
+
+I created a Knowledge Base in the Context app and pointed it at my own dataset, using a GROQ source query to pull in every document that has a body:
 
 ```groq
 *[_type == "sourceDocument" && defined(body)]{
@@ -87,46 +85,56 @@ The agent reads Sanity through two Context MCP endpoints, one per retrieval mode
 }
 ```
 
-That gives it the full text of the brochure, the registration and the agreement. The Knowledge Base's purpose is written for buyers: who comes with questions, what should lead, what to leave out.
+For the Knowledge Base's purpose I wrote it the way you'd brief a person: who's going to ask questions (homebuyers in India), what should lead (buyer rights, registered facts, agreement clauses, red flags), and what's out of scope.
 
-**The conflict review turned out to be the best part.** On the first build, Context flagged six conflicts between the brochure and the registration: the floors, the tower count, the possession date, both flat sizes, and the jogging track (1 km advertised, 600 m registered). I resolved every one in favour of the registration. Each decision becomes an instruction that later builds keep.
+Then I hit *Build entries*, and Context came back with six issues. Every one of them was a conflict between the brochure and the registration. The floors, the number of towers, the possession date, the sizes of both flat types, and a jogging track advertised at 1 km that's registered at 600 m. Reading through them felt a bit like watching the product work on itself. I resolved each one in favour of the registration, and Context saved every decision as an instruction that future builds keep.
 
-Then I added one instruction by hand, because "the registration wins" on its own throws away something useful:
+But "the registration wins" on its own throws away something useful. A buyer needs to know what they were *promised* as well as what's true, because that gap is exactly what they'll raise with the builder. So I added one instruction by hand:
 
 > When a marketing document contradicts a registration document, treat the registration as correct, but keep the marketing claim in the entry, labelled "Advertised", with its source.
 
-So the agent can still say *"you were promised X, the builder is held to Y"*, which is exactly the sentence a buyer needs.
+Now the agent can say "you were told March 2027, but the builder is held to 31 December 2028", which is the sentence that actually helps.
 
-### What the agent does with it
+I'll be honest about one gap. I meant to add the RERA Act as a PDF, as a second source. The government site wouldn't serve the file to my machine, so for now the law lives in the dataset as quoted claims, Section 13(1) on booking amounts and Section 14(3) on defect liability, and the agent reaches it through GROQ.
 
-The agent runs on Groq's Responses API with `openai/gpt-oss-120b`. Groq connects to both Context endpoints as remote MCP servers and runs the tool calls itself, so my server code only sends the conversation and relays the steps back to the UI. A typical answer looks like this:
+### Two endpoints, two jobs
 
-1. `groq_query` for the findings that are mismatches or violations;
-2. `groq_query` for the registration's claims on the facts in question;
-3. `initial_context` on the Knowledge Base, then `knowledge_base_read` on the entries it needs, like *possession and delays* or *buyer rights*;
-4. an answer that cites each fact by document and quote, then says what to ask for and what not to pay yet.
+The agent talks to Sanity through two Context MCP endpoints, and keeping them separate was deliberate. An endpoint that has both a dataset and a Knowledge Base attached quietly serves only the dataset.
 
-The system prompt gives it the trust order and one hard rule: never invent a quote, section number, date or amount. If neither source has the answer, it says so and points to the state RERA portal or a lawyer.
+`home-truth-data` runs in GROQ mode and answers exact questions. Each chat narrows it to the current project by adding a `groqFilter` to the endpoint URL, so the agent only sees that project, the attribute definitions and the law. Context combines that filter with the endpoint's own, so it can only ever narrow access, never widen it. I also cut its tool list down to `groq_query`, `schema_explorer` and `array_field_reader`. The system prompt already explains the schema, so `initial_context` was just spending tokens.
 
-### Things I learned the hard way
+`home-truth-kb` runs in Knowledge Base mode. That's where the agent goes for "what does this clause mean" and "what are my rights if possession is late". It calls `initial_context` once to get the outline, then `knowledge_base_read` for the entries it needs.
 
-- **One endpoint, one mode.** An endpoint with both a dataset and a Knowledge Base silently serves only the dataset. Hence two.
-- **Project tokens don't work for Context.** You get `403`. It needs an *organization* token with Context Viewer.
-- **A deployed schema isn't enough.** The GROQ endpoint said "No Studio application found" until I actually ran `sanity deploy`. After that it went green.
-- **The model has habits.** gpt-oss leaves tool-result markers like `【result[0].quote】` in its prose and puts `<br>` inside table cells. Both get stripped before the answer reaches the page.
-- **The chat started on Claude.** I built it first on Claude's MCP connector, then moved it to Groq. Because both providers run MCP server-side, the switch touched one file of about 90 lines. Claude still does the claim extraction for new documents.
+### What the agent actually does
+
+The agent runs on Groq with `openai/gpt-oss-120b`, using Groq's Responses API. Groq connects to both endpoints as remote MCP servers and runs the tool calls itself, so my server just sends the conversation and passes each step back to the page.
+
+When I asked it how many floors the towers are registered for and what the brochure claims, it first ran:
+
+```groq
+*[_type == "finding" && attribute->label match "*floor*"]{status, severity, summary, "fact": attribute->label, entries}
+```
+
+Then it pulled the two claims behind that finding, opened the Knowledge Base outline, and read the *possession and delays* and *buyer rights* entries. The answer quoted the sanctioned plan ("Ground + 12") against the brochure ("G+18"), called it a critical mismatch, summarised Section 18 on delayed possession, and finished with what to ask the builder for and what not to pay yet. All five steps sit under *How I checked*.
+
+The system prompt is short on personality and strict on rules. Trust the Act, then the registration, then the agreement, then marketing. Never invent a quote, a section number, a date or an amount. If neither source knows, say so and send the buyer to the state RERA portal or a lawyer.
+
+### The parts that bit me
+
+Project tokens don't work for Context. I got a 403 until I made an *organization* token with Context Viewer.
+
+Deploying the schema wasn't enough, either. The GROQ endpoint kept saying "No Studio application found" until I ran `sanity deploy` and the Studio went live. Then everything turned green at once.
+
+The model has habits. gpt-oss leaves markers like `【result[0].quote】` in its prose and drops `<br>` into table cells, so both get stripped before an answer reaches the page.
+
+And the chat didn't start on Groq. I first built it on Claude's MCP connector, then moved it over. Because both run MCP on their side, the switch touched one file of about 90 lines. Claude still does the claim extraction for new documents.
 
 ## Sanity Project Details
 
-- **Project ID:** `f5y6g2q3`
-- **Dataset:** `production` (public)
-- **Try it:** [every project in the dataset](https://f5y6g2q3.api.sanity.io/v2025-01-01/data/query/production?query=*%5B_type%3D%3D%22project%22%5D) · [the findings](https://f5y6g2q3.api.sanity.io/v2025-01-01/data/query/production?query=*%5B_type%3D%3D%22finding%22%5D%7Bstatus%2Cseverity%2Csummary%7D)
-- **Studio:** https://home-truth.sanity.studio (sign-in required)
-
-The demo dataset has 4 source documents, 12 attributes, 28 claims and 12 computed findings.
+The project ID is `f5y6g2q3`, and the `production` dataset is public. You can query it straight away: [every project](https://f5y6g2q3.api.sanity.io/v2025-01-01/data/query/production?query=*%5B_type%3D%3D%22project%22%5D), or [all the findings](https://f5y6g2q3.api.sanity.io/v2025-01-01/data/query/production?query=*%5B_type%3D%3D%22finding%22%5D%7Bstatus%2Cseverity%2Csummary%7D). The demo has 4 source documents, 12 attributes, 28 claims and 12 computed findings. The Studio is at https://home-truth.sanity.studio (sign-in required).
 
 ---
 
-Ananya didn't pay 20% that day.
+Ananya didn't pay 20% that day. She went home with a list of questions instead.
 
-If you're about to book a flat in India, check the project on your state's RERA portal first. Home Truth explains what the documents and the law say. It isn't legal advice.
+If you're about to book a flat in India, look the project up on your state's RERA portal first. Home Truth explains what the documents and the law say. It isn't legal advice.
